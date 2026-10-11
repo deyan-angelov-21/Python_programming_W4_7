@@ -1,23 +1,15 @@
-import sys
-
 print("Program starting.")
 print()
 print("Check multiplicative persistence.")
 
-if sys.stdin.isatty():
-    number = int(input("Insert an integer: "))
-else:
-    print("Insert an integer: ", end="")
-    raw = input()
-    print(raw)
-    number = int(raw)
+number = int(input("Insert an integer: "))
 
 steps = 0
 while number > 9:
     product = 1
     for digit in str(number):
         product *= int(digit)
-    print("*".join(str(number)), "=", product)
+    print(" * ".join(str(number)), "=", product)
     number = product
     steps += 1
 
