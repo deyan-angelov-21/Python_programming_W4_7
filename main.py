@@ -2,6 +2,7 @@ print("Program starting.")
 print()
 print("Check multiplicative persistence.")
 n = int(input("Insert an integer: "))
+n = abs(n)
 
 steps = 0
 
