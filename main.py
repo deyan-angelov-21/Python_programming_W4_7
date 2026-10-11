@@ -1,32 +1,23 @@
-def main():
-    print("Program starting.")
-    print("Check multiplicative persistence.")
-    
-    try:
-        user_input = input("Insert an integer: ")
-        n = int(user_input)
-    except ValueError:
-        return
+print("Program starting.")
+print()
+print("Check multiplicative persistence.")
 
-    steps = 0
-    current_str = user_input.strip()
+number = int(input("Insert an integer: "))
 
-    while len(current_str) > 1:
-        digits = [int(ch) for ch in current_str]
-        
-        product = 1
-        for d in digits:
-            product *= d
-            
-        expression = " * ".join(str(d) for d in digits)
-        print(f"{expression} = {product}")
-        
-        current_str = str(product)
-        steps += 1
+steps = 0
+while number > 9:
+    digits = [int(d) for d in str(number)]
+    product = 1
+    for digit in digits:
+        product *= digit
 
-    print("No more steps.")
-    print(f"This program took {steps} step(s)")
-    print("Program ending.")
+    print("*".join(str(d) for d in digits), "=", product)
 
-if __name__ == "__main__":
-    main()
+    number = product
+    steps += 1
+
+print("No more steps.")
+print()
+print(f"This program took {steps} step(s)")
+print()
+print("Program ending.")
